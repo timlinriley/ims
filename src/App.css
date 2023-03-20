@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.head {
+  background-color: gray;
+  height: 50px;
+}
+.tdata {
+  height: 100px;
+  background-color: aquamarine;
+}
+.tdataimg{
+  height: 100px;
+  width: 160px;
+}
+.tdatadesc {
+  height: 100px;
+  background-color: aquamarine;
+  width: 200px;
+}

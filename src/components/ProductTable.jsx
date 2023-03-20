@@ -1,4 +1,5 @@
 import React from 'react'
+import FormDesc from '../FormDesc'
 
 const ProductTable = (props) => {
     // console.log(props.products)
@@ -6,23 +7,29 @@ const ProductTable = (props) => {
             <div>
                         <h1>ProductTable</h1>
                 <table>
-                    <thead>
+                    <thead className="head">
                     <tr>
                         <th>Image</th>
                         <th>Description</th>
                         <th>Quantity</th>
                         <th>Category</th>
+                        <th>Brand</th>
                         <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><FormDesc products={props.products.produts}/></td>
                     </tr>
                     </thead>
                     <tbody>
                 { props.products.products.map((element) => {
-                    return <tr>
-                        <td><img src={element.thumbnail} /></td>
-                        <td>{element.description}</td>
-                        <td>{element.stock}</td>
-                        <td>{element.category}</td>
-                        <td>{element.price}</td>
+                    return <tr >
+                        <td className="tdata"><img className="tdataimg" src={element.thumbnail} /></td>
+                        <td className="tdatadesc" >{element.description}</td>
+                        <td className="tdata">{element.stock}</td>
+                        <td className="tdata">{element.category}</td>
+                        <td className="tdata">{element.brand}</td>
+                        <td className="tdata">{element.price}</td>
                     </tr>
                      
                     })
