@@ -2,10 +2,11 @@ import React from 'react'
 
 const ProductTable = (props) => {
     // console.log(props.products)
-    const display = props.products.products.map((element) => {
         return(
             <div>
+                        <h1>ProductTable</h1>
                 <table>
+                    <thead>
                     <tr>
                         <th>Image</th>
                         <th>Description</th>
@@ -13,13 +14,20 @@ const ProductTable = (props) => {
                         <th>Category</th>
                         <th>Price</th>
                     </tr>
-                    <tr >
+                    </thead>
+                    <tbody>
+                { props.products.products.map((element) => {
+                    return <tr>
                         <td><img src={element.thumbnail} /></td>
                         <td>{element.description}</td>
                         <td>{element.stock}</td>
                         <td>{element.category}</td>
                         <td>{element.price}</td>
                     </tr>
+                     
+                    })
+                    }
+                    </tbody>
                 </table>
             </div>
             // <div>
@@ -36,15 +44,15 @@ const ProductTable = (props) => {
             // <h4></h4>
             // </div>
         )
-    })
+   
 
-  return (
-    <div>
-        <h1>ProductTable</h1>
-        {display}
+//   return (
+//     <div>
+//         <h1>ProductTable</h1>
         
-    </div>
-  )
+        
+//     </div>
+//   )
 }
 
 export default ProductTable
