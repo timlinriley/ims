@@ -18,7 +18,7 @@ const ProductTable = (props) => {
                     </tr>
                     <tr>
                         <td></td>
-                        <td><FormDesc products={props.products.produts}/></td>
+                        <td><FormDesc products={props.products.products}/></td>
                     </tr>
                     </thead>
                     <tbody>
