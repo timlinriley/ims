@@ -12,7 +12,6 @@ function App() {
     );
     const data = await response.json();
     setProduct(data);
-    console.log(product);
     }
     const Call = () => {
     useEffect(() => {
@@ -21,6 +20,8 @@ function App() {
   };
   Call()
   Call()
+  console.log(product);
+
     return (
     <div className="App">
       <ProductTable products={product}/>
