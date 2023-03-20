@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import ProductTable from './components/ProductTable';
+import {useState, useEffect} from 'react';
 
 function App() {
-  return (
+  const [product, setProduct] = useState({});
+  // const [result, setResult] = useState([]);
+  const getProducts = async () => {
+    const response = await fetch(
+      'https://dummyjson.com/products?limit=0&skip=0&select=title,price,description,stock,thumbnail,category,brand'
+    );
+    const data = await response.json();
+    setProduct(data);
+    console.log(product);
+    }
+    const Call = () => {
+    useEffect(() => {
+      getProducts()
+    },[])
+  };
+  Call()
+  Call()
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductTable products={product}/>
     </div>
   );
 }
