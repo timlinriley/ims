@@ -48,6 +48,7 @@ const Table = () => {
     {
         Header: 'Price',
         accessor: 'price',
+        Cell: ({ value }) => <div>${value}</div>,
         Filter: ColumnFilter,
 
     }
