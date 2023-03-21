@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
+import { useGlobalFilter, useSortBy, useTable, useFilters } from "react-table";
+import ColumnFilter from './ColumnFilter';
 
 const Table = () => {
    const [products, setProducts] = useState([]);
@@ -24,26 +25,45 @@ const Table = () => {
     {
         Header: 'Title',
         accessor: 'title',
+        Filter: ColumnFilter,
     },
     {
         Header: 'Quantity',
         accessor: 'stock',
+        Filter: ColumnFilter,
+
+    },
+    {
+        Header: 'Brand',
+        accessor: 'brand',
+        Filter: ColumnFilter,
+
     },
     {
         Header: 'Category',
         accessor: 'category',
+        Filter: ColumnFilter,
+
     },
     {
         Header: 'Price',
-        accessor: 'price'
-    }
-   ],[])
+        accessor: 'price',
+        Filter: ColumnFilter,
 
+    }
+
+   ],[])
+   const defaultColumn = useMemo(
+    () => ({
+      Filter: ColumnFilter,
+    }),
+    []
+  );
 //    const productsData = useMemo(() => [
 //     [...products]
 //    ]);
 //    console.log(productsData)
-   const tableInstance = useTable({ columns: columns, data: products});
+   const tableInstance = useTable({ columns: columns, data: products, defaultColumn}, useFilters);
 
    const {
         getTableProps,
@@ -52,6 +72,8 @@ const Table = () => {
         rows,
         prepareRow,
    } = tableInstance;
+
+
 
     useEffect(() => {
         getProducts();
@@ -67,6 +89,7 @@ const Table = () => {
                     {headerGroup.headers.map(column => (
                         <th {...column.getHeaderProps()}>
                             {column.render('Header')}
+                            <div>{column.canFilter ? column.render('Filter') : null}</div>
                         </th>
                     ))}
                 </tr>
