@@ -18,6 +18,8 @@ const Table = () => {
     {
         Header: 'Image',
         accessor: 'thumbnail',
+        Cell: ({ value }) => <img className="tdataimg" src={value} />,
+
     },
     {
         Header: 'Title',
