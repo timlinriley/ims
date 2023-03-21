@@ -38,7 +38,18 @@ const Table = () => {
 
    const productsData = useMemo(() => [
     [...products], [products]
-   ])
+   ]);
+
+   const tableInstance = useTable({ columns, productsData });
+
+   const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+   } = tableInstance;
+
     useEffect(() => {
         getProducts();
     }, [])
@@ -46,6 +57,19 @@ const Table = () => {
   return (
     <div>
         <h1>Table</h1>
+        <table {...getTableProps()}>
+            <thead>
+              { headerGroups.map(headerGroup => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => (
+                        <th {...column.getHeaderProps()}>
+                            {column.render('Header')}
+                        </th>
+                    ))}
+                </tr>
+                ))}
+            </thead>
+        </table>
        
         
     </div>
