@@ -11,10 +11,38 @@ const Table = () => {
     // console.log(data)
     setProducts(data.data.products);
    }
+
+
+   const columns = useMemo(() => [
+    {
+        Header: 'Image',
+        accessor: 'thumbnail',
+    },
+    {
+        Header: 'Title',
+        accessor: 'title',
+    },
+    {
+        Header: 'Quantity',
+        accessor: 'stock',
+    },
+    {
+        Header: 'Category',
+        accessor: 'category',
+    },
+    {
+        Header: 'Price',
+        accessor: 'price'
+    }
+   ],[])
+
+   const productsData = useMemo(() => [
+    [...products], [products]
+   ])
     useEffect(() => {
         getProducts();
     }, [])
-    console.log(products)
+    // console.log(products)
   return (
     <div>
         <h1>Table</h1>
