@@ -10,6 +10,7 @@ const Table = () => {
     const data = response;
     // console.log(data)
     setProducts(data.data.products);
+    console.log(products)
    }
 
 
@@ -36,11 +37,11 @@ const Table = () => {
     }
    ],[])
 
-   const productsData = useMemo(() => [
-    [...products], [products]
-   ]);
-
-   const tableInstance = useTable({ columns, productsData });
+//    const productsData = useMemo(() => [
+//     [...products]
+//    ]);
+//    console.log(productsData)
+   const tableInstance = useTable({ columns: columns, data: products});
 
    const {
         getTableProps,
@@ -69,6 +70,22 @@ const Table = () => {
                 </tr>
                 ))}
             </thead>
+            <tbody {...getTableBodyProps()}>
+                {rows.map(row =>{
+                    prepareRow(row)
+                    return (
+                        <tr {...row.getRowProps()}>
+                           {row.cells.map(cell => {
+                            return (
+                                <td {...cell.getCellProps()}>
+                                    {cell.render('Cell')}
+                                </td>
+                              )
+                           })}
+                        </tr>
+                    )
+                })}
+            </tbody>
         </table>
        
         
