@@ -1,6 +1,8 @@
 import React from 'react'
 
-const OrderModal = ({onClose}) => {
+const OrderModal = (props,{onClose}) => {
+    const products = props.products;
+    console.log(products)
   return (
     <div>
         

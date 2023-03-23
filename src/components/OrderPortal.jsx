@@ -4,13 +4,14 @@ import OrderModal from "./OrderModal";
 
 import React from 'react'
 
-const OrderPortal = () => {
+const OrderPortal = (props) => {
+    const products = props.products;    
     const [showModal, setShowModal] = useState(false);
   return (
     <div>
         <button onClick={() => setShowModal(true)}>Create Order</button>
         {showModal && createPortal(
-            <OrderModal onClose={() => setShowModal(false)} />, document.body
+            <OrderModal products={products} onClose={() => setShowModal(false)} />, document.body
         )}
     </div>
   );

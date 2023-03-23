@@ -80,7 +80,7 @@ const Table = () => {
     // console.log(products)
   return (
     <div>
-        <OrderPortal />
+        <OrderPortal products={products}/>
         <h1>Table</h1>
         <table {...getTableProps()}>
             <thead>
