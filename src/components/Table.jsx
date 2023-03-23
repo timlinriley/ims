@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import { useGlobalFilter, useSortBy, useTable, useFilters } from "react-table";
 import ColumnFilter from './ColumnFilter';
+import OrderPortal from './OrderPortal';
 
 const Table = () => {
    const [products, setProducts] = useState([]);
@@ -60,10 +61,7 @@ const Table = () => {
     }),
     []
   );
-//    const productsData = useMemo(() => [
-//     [...products]
-//    ]);
-//    console.log(productsData)
+
    const tableInstance = useTable({ columns: columns, data: products, defaultColumn}, useFilters);
 
    const {
@@ -82,6 +80,7 @@ const Table = () => {
     // console.log(products)
   return (
     <div>
+        <OrderPortal />
         <h1>Table</h1>
         <table {...getTableProps()}>
             <thead>
