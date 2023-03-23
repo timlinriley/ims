@@ -19,16 +19,16 @@ const OrderModal = (props,{onClose}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        setOrders(order.emptyOrder)
+        setOrders(order)
         console.log(orders, '*')
     }
   return (
     <div>
-        <form>
+        <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Order #' value={order.orderNo} onChange={handleChange} name="orderNo"></input>
         <input type="text" placeholder='Product' value={order.product} onChange={handleChange} name="product"></input>
         <input type="text" placeholder='quantity' value={order.quantity} onChange={handleChange} name="quantity"></input>
-        <button onSubmit={handleSubmit}>Submit Order</button>
+        <input type="submit" value="submit" />
         <button onClick={onClose}>Close</button>  
         </form>  
     </div>
