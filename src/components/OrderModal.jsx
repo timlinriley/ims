@@ -41,10 +41,14 @@ const OrderModal = (props,{onClose}) => {
         // setSelect(e.target.value)
         // console.log(name, value)
     }
+    const addArray = (order) => {
+        orders.push(order)
+        setOrders(orders);
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
          console.log(order)
-        setOrders((prev) => [...prev, order])
+        addArray(order)
         console.log(orders, '*')
         // console.log(order)
     }
