@@ -47,7 +47,6 @@ const OrderModal = (props,{onClose}) => {
         <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Order #' value={order.orderNo} onChange={handleChange} name="orderNo"></input>
         <Select name='product' options={options} />
-        <input type="text" placeholder='Product' value={order.product} onChange={handleChange} name="product"></input>
         <input type="text" placeholder='quantity' value={order.quantity} onChange={handleChange} name="quantity"></input>
         <input type="submit" value="submit" />
         <button onClick={onClose}>Close</button>  
