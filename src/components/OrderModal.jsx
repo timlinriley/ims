@@ -44,8 +44,8 @@ const OrderModal = (props,{onClose}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
          console.log(order)
-        // setOrders(...orders, order)
-        // console.log(orders, '*')
+        setOrders((prev) => [...prev, order])
+        console.log(orders, '*')
         // console.log(order)
     }
   return (
