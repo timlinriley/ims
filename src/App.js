@@ -32,7 +32,7 @@ function App() {
     return (
     <div className="App">
       
-      <Table updateArray={updateOrderArray}/>
+      <Table updateOrderArray={updateOrderArray}/>
       {/* <ProductTable products={product}/> */}
     </div>
   );

@@ -14,7 +14,7 @@ const Table = (props) => {
     setProducts(data.data.products);
     console.log(products)
    }
-   const orderArray = props.updateArray;
+   
 
    const columns = useMemo(() => [
     {
@@ -80,7 +80,7 @@ const Table = (props) => {
     // console.log(products)
   return (
     <div>
-        <OrderPortal updateOrderArray={orderArray} products={products}/>
+        <OrderPortal updateOrderArray={props.updateOrderArray} products={products}/>
         <h1>Table</h1>
         <table {...getTableProps()}>
             <thead>
