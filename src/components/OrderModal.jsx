@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import Select from 'react-select';
 
 const OrderModal = (props,{onClose}) => {
     const products = props.products;

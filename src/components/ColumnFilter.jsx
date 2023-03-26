@@ -5,8 +5,7 @@ const ColumnFilter = ({ column }) => {
     const count = preFilteredRows.length;
   return (
     <div>
-        Filter:{' '}
-    <input value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder={`Search ${count} products in stock`} />
+    <input value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder={`Filter ${count} products in stock`} />
     </div>
   )
 }
