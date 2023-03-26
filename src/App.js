@@ -5,6 +5,12 @@ import {useState, useEffect} from 'react';
 import Table from './components/Table';
 
 function App() {
+  const [orderArray, setOrderArray] = useState([])
+      const updateOrderArray = (array) => {
+        setOrderArray(array);
+        console.log(orderArray, 'orderArray updated')
+      }
+
   // const [product, setProduct] = useState({});
   // // const [result, setResult] = useState([]);
   // const getProducts = async () => {
@@ -25,7 +31,8 @@ function App() {
 
     return (
     <div className="App">
-      <Table />
+      
+      <Table updateArray={updateOrderArray}/>
       {/* <ProductTable products={product}/> */}
     </div>
   );

@@ -5,7 +5,7 @@ import { useGlobalFilter, useSortBy, useTable, useFilters } from "react-table";
 import ColumnFilter from './ColumnFilter';
 import OrderPortal from './OrderPortal';
 
-const Table = () => {
+const Table = (props) => {
    const [products, setProducts] = useState([]);
    const getProducts = async () => {
     const response = await axios.get('https://dummyjson.com/products?limit=0&skip=0&select=title,price,description,stock,thumbnail,category,brand')
@@ -14,7 +14,7 @@ const Table = () => {
     setProducts(data.data.products);
     console.log(products)
    }
-
+   const orderArray = props.updateArray;
 
    const columns = useMemo(() => [
     {
@@ -80,7 +80,7 @@ const Table = () => {
     // console.log(products)
   return (
     <div>
-        <OrderPortal products={products}/>
+        <OrderPortal updateOrderArray={orderArray} products={products}/>
         <h1>Table</h1>
         <table {...getTableProps()}>
             <thead>
