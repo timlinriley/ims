@@ -7,11 +7,12 @@ import React from 'react'
 const OrderPortal = (props) => {
     const products = props.products;    
     const [showModal, setShowModal] = useState(false);
+    const updateOrderArray = props.updateOrderArray;
   return (
     <div>
         <button onClick={() => setShowModal(true)}>Create Order</button>
         {showModal && createPortal(
-            <OrderModal products={products} onClose={() => setShowModal(false)} />, document.body
+            <OrderModal updateArray={updateOrderArray} products={products} onClose={() => setShowModal(false)} />, document.body
         )}
     </div>
   );
