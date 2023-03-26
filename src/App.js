@@ -3,6 +3,7 @@ import './App.css';
 import ProductTable from './components/ProductTable';
 import {useState, useEffect} from 'react';
 import Table from './components/Table';
+import Orders from './components/Orders';
 
 function App() {
   const [orderArray, setOrderArray] = useState([])
@@ -34,6 +35,7 @@ function App() {
       
       <Table updateOrderArray={updateOrderArray}/>
       {/* <ProductTable products={product}/> */}
+      <Orders orders={orderArray}/>
     </div>
   );
 }
