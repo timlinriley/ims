@@ -48,9 +48,11 @@ const OrderModal = (props,{onClose}) => {
         e.preventDefault();
          console.log(order)
         addArray(order)
+        props.updateOrderArray(orders)
         console.log(orders, '*')
         // console.log(order)
     }
+
   return (
     <div>
         <form onSubmit={handleSubmit}>
