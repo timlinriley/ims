@@ -80,7 +80,7 @@ const Table = (props) => {
     }, [])
     // console.log(products)
   return (
-    <div>
+    <div className="table">
         <OrderPortal updateOrderArray={props.updateOrderArray} products={products}/>
         <h1>AVAILABLE INVENTORY</h1>
         <table {...getTableProps()}>
