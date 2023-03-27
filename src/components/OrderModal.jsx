@@ -57,17 +57,18 @@ const OrderModal = (props,{onClose}) => {
     <div className="modal-container">
         <form onSubmit={handleSubmit}>
             <div className="modal-content">
-        <input type="text" placeholder='Order #' value={order.orderNo} onChange={handleChange} name="orderNo"></input>
-        <select value={select} name="product" onChange={handleChange} >
+                <h5 className="create">Create Order</h5>
+        <input className="modord" type="text" placeholder='Order #' value={order.orderNo} onChange={handleChange} name="orderNo"></input>
+        <select className="modsel"value={select} name="product" onChange={handleChange} >
             {products.map((element)=> {
                 return (<option name="product" >{element.title}</option> 
                     )
             })}
         </select>
         {/* <Select name="product" value={options.value} options={options}  /> */}
-        <input type="text" placeholder='quantity' value={order.quantity} onChange={handleChange} name="quantity"></input>
-        <input type="submit" value="submit" />
-        <button onClick={onClose}>Close</button>  
+        <input className="modquant" type="text" placeholder='quantity' value={order.quantity} onChange={handleChange} name="quantity"></input>
+        <input className="modsub" type="submit" value="Submit" />
+        <button onClick={onClose}>Close</button>
         </div>
         </form>  
     </div>
