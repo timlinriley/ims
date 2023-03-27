@@ -7,11 +7,13 @@ import OrderPortal from './OrderPortal';
 import '../App.css';
 
 const Table = (props) => {
+    // Make api call to retrieve product data:
    const [products, setProducts] = useState([]);
    const getProducts = async () => {
     const response = await axios.get('https://dummyjson.com/products?limit=0&skip=0&select=title,price,description,stock,thumbnail,category,brand')
     const data = response;
     // console.log(data)
+    // Because response = an array called data with an object that has a value called data which contains an array called products: access only the products array like this:
     setProducts(data.data.products);
     console.log(products)
    }
