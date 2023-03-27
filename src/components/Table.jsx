@@ -18,7 +18,7 @@ const Table = (props) => {
     console.log(products)
    }
    
-
+// Set up the table :
    const columns = useMemo(() => [
     {
         Header: 'Image',
@@ -65,6 +65,7 @@ const Table = (props) => {
     []
   );
 
+//   Create table instance to pass to the table elements:
    const tableInstance = useTable({ columns: columns, data: products, defaultColumn}, useFilters);
 
    const {
