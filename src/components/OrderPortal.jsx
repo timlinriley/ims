@@ -8,7 +8,7 @@ const OrderPortal = (props) => {
     const products = props.products;    
     const [showModal, setShowModal] = useState(false);
   return (
-    <div>
+    <div className="orderPortal">
         <button onClick={() => setShowModal(true)}>Create Order</button>
         {showModal && createPortal(
             <OrderModal updateOrderArray={props.updateOrderArray} products={products} onClose={() => setShowModal(false)} />, document.body

@@ -82,7 +82,7 @@ const Table = (props) => {
   return (
     <div>
         <OrderPortal updateOrderArray={props.updateOrderArray} products={products}/>
-        <h1>AVAILALBE INVENTORY</h1>
+        <h1>AVAILABLE INVENTORY</h1>
         <table {...getTableProps()}>
             <thead className="head">
               { headerGroups.map(headerGroup => (

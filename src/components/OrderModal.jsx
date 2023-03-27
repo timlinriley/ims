@@ -54,8 +54,9 @@ const OrderModal = (props,{onClose}) => {
     }
 
   return (
-    <div>
+    <div className="modal-container">
         <form onSubmit={handleSubmit}>
+            <div className="modal-content">
         <input type="text" placeholder='Order #' value={order.orderNo} onChange={handleChange} name="orderNo"></input>
         <select value={select} name="product" onChange={handleChange} >
             {products.map((element)=> {
@@ -67,6 +68,7 @@ const OrderModal = (props,{onClose}) => {
         <input type="text" placeholder='quantity' value={order.quantity} onChange={handleChange} name="quantity"></input>
         <input type="submit" value="submit" />
         <button onClick={onClose}>Close</button>  
+        </div>
         </form>  
     </div>
   )
