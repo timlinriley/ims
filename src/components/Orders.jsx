@@ -5,6 +5,7 @@ const Orders = (props) => {
   
         return(
         <div>
+            <h1>ORDERS</h1>
                             <table>
                     <thead className="head">
                     <tr>

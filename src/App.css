@@ -39,6 +39,7 @@
 .head {
   background-color: gray;
   height: 50px;
+  margin:10px;
 }
 .tdata {
   height: 100px;
@@ -52,4 +53,21 @@
   height: 100px;
   background-color: aquamarine;
   width: 200px;
+}
+.trow {
+  border-bottom: solid 2px black;
+  background-color: antiquewhite;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1em;
+
+}
+.nav a{
+  text-decoration: none;
+  cursor: pointer;
 }

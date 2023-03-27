@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useGlobalFilter, useSortBy, useTable, useFilters } from "react-table";
 import ColumnFilter from './ColumnFilter';
 import OrderPortal from './OrderPortal';
+import '../App.css';
 
 const Table = (props) => {
    const [products, setProducts] = useState([]);
@@ -81,9 +82,9 @@ const Table = (props) => {
   return (
     <div>
         <OrderPortal updateOrderArray={props.updateOrderArray} products={products}/>
-        <h1>Table</h1>
+        <h1>AVAILALBE INVENTORY</h1>
         <table {...getTableProps()}>
-            <thead>
+            <thead className="head">
               { headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map(column => (
@@ -99,7 +100,7 @@ const Table = (props) => {
                 {rows.map(row =>{
                     prepareRow(row)
                     return (
-                        <tr {...row.getRowProps()}>
+                        <tr className="trow" {...row.getRowProps()}>
                            {row.cells.map(cell => {
                             return (
                                 <td {...cell.getCellProps()}>
