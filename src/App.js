@@ -10,7 +10,7 @@ import Main from './components/Main';
 
 
 function App() {
-  const [orderArray, setOrderArray] = useState([])
+  const [orderArray, setOrderArray] = useState([{orderNo: 'test', product: 'test', quantity: 'test'}])
       const updateOrderArray = (array) => {
         setOrderArray(array);
         console.log(orderArray, 'orderArray updated')
@@ -39,12 +39,12 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/ProductTable" element={<Table />} />
-        <Route path="/Orders" element={<Orders />} />
+        <Route path="/Table" element={<Table updateOrderArray={updateOrderArray}/>} />
+        <Route path="/Orders" element={<Orders orders={orderArray} />} />
       </Routes>
-      <Table updateOrderArray={updateOrderArray}/>
+      {/* <Table updateOrderArray={updateOrderArray}/>
       {/* <ProductTable products={product}/> */}
-      <Orders orders={orderArray}/>
+      {/* <Orders orders={orderArray}/> */} 
     </div>
   );
 }
