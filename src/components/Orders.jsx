@@ -16,6 +16,7 @@ const Orders = (props) => {
 
                     </thead>
                     <tbody>
+                        {/* Map over orders array to display as data in table */}
                     {props.orders.map((element)=>{
                         return <tr className="trow">
                         <td>{element.orderNo}</td>
