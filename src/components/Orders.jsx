@@ -2,7 +2,7 @@ import React from 'react'
 import OrderPortal from './OrderPortal'
 
 const Orders = (props) => {
-    const display = props.orders.map((element)=>{
+  
         return(
         <div>
                             <table>
@@ -15,24 +15,26 @@ const Orders = (props) => {
 
                     </thead>
                     <tbody>
+                    {props.orders.map((element)=>{
+                        return <tr>
                         <td>{element.orderNo}</td>
                         <td>{element.product}</td>
                         <td>{element.quantity}</td>
+                        </tr>
+})}
                     </tbody>
                     </table>
-        <p>{element.orderNo}</p>
-        <p>{element.product}</p>
-        <p>{element.quantity}</p>
+
         </div>
-    )})
-  return (
+)                    
+//   return (
     
-    <div>
-        <h1>display?</h1>
+//     <div>
+//         <h1>display?</h1>
 
-        <div>{display}</div>
-    </div>
-  )
+//         <div>{display}</div>
+//     </div>
+//   )
+
 }
-
 export default Orders
