@@ -4,6 +4,10 @@ import ProductTable from './components/ProductTable';
 import {useState, useEffect} from 'react';
 import Table from './components/Table';
 import Orders from './components/Orders';
+import { Route, Routes } from "react-router-dom";
+import Nav from './components/Nav';
+import Main from './components/Main';
+
 
 function App() {
   const [orderArray, setOrderArray] = useState([])
@@ -32,7 +36,12 @@ function App() {
 
     return (
     <div className="App">
-      
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/ProductTable" element={<Table />} />
+        <Route path="/Orders" element={<Orders />} />
+      </Routes>
       <Table updateOrderArray={updateOrderArray}/>
       {/* <ProductTable products={product}/> */}
       <Orders orders={orderArray}/>
