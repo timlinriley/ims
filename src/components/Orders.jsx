@@ -6,7 +6,7 @@ const Orders = (props) => {
         return(
         <div>
             <h1>ORDERS</h1>
-                            <table>
+                            <table className="table">
                     <thead className="head">
                     <tr>
                         <th>Order Number</th>
@@ -17,7 +17,7 @@ const Orders = (props) => {
                     </thead>
                     <tbody>
                     {props.orders.map((element)=>{
-                        return <tr>
+                        return <tr className="trow">
                         <td>{element.orderNo}</td>
                         <td>{element.product}</td>
                         <td>{element.quantity}</td>
